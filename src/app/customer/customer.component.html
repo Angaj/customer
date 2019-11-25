@@ -1,0 +1,40 @@
+<div style="text-align:center">
+  <h1>
+    Welcome Admin!  
+  </h1>
+ 
+</div>
+
+
+<h2>Customer</h2>
+ <div class="container">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th> Change Status </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customer">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.status}}</td>
+        <td> 
+            <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+            </label> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="my_class" (click)="clickEvent()"  
+    [ngClass]="status ? 'success' : 'danger'">                
+     Some content
+</div>
+
