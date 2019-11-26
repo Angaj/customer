@@ -8,20 +8,27 @@ import {Customer} from '../customer';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
+  
   customer = CUSTOMER;
   selectedCustomer: Customer;
-  clicked = false;
 
+  public show:boolean = false;
+  public buttonName:any = 'inactive';
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggle() {
+    this.show = !this.show;
 
-  status: boolean = false;
-clickEvent(){
-    this.status = !this.status;       
-}
-
+    // CHANGE THE NAME OF THE BUTTON.
+    if(this.show){ 
+      this.buttonName = "active";
+       
+    }
+    else
+      this.buttonName = "inactive";
+  }
 }

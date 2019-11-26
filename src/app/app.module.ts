@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomerComponent } from './customer/customer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
