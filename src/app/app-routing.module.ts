@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomerComponent } from './customer/customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
  
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: 'navbar',component: NavbarComponent},
-  {path:'customer', component: CustomerComponent}
+  {path:'customer', component: CustomerComponent},
+  {path:'customer-detail', component: CustomerDetailComponent}
 ];
 
 @NgModule({

@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let customer of customer">
+      <tr *ngFor="let customer of customer" [class.selected]="customer === selectedCustomer" (click)="onSelect(customer)">
         <td>{{customer.id}}</td>
         <td>{{customer.name}}</td>
         <td>{{buttonName}}</td>
@@ -33,3 +33,4 @@
   </table>
 </div>
 
+<app-customer-detail></app-customer-detail>

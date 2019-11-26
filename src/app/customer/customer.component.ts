@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CUSTOMER} from '../mock-customer';
 import {Customer} from '../customer';
+import {CustomerService} from '../customer.service';
 
 @Component({
   selector: 'app-customer',
@@ -9,15 +9,25 @@ import {Customer} from '../customer';
 })
 export class CustomerComponent implements OnInit {
   
-  customer = CUSTOMER;
+  customer : Customer[];
   selectedCustomer: Customer;
 
   public show:boolean = false;
   public buttonName:any = 'inactive';
   
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
+
 
   ngOnInit() {
+    this.getCustomer();
+  }
+
+  onSelect(customer: Customer) : void{
+    this.selectedCustomer= customer;
+  }  
+
+  getCustomer(): void{
+   this.customer = this.customerService.getCustomer()
   }
 
   toggle() {

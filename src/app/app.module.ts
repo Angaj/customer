@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomerComponent } from './customer/customer.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CustomerComponent } from './customer/customer.component';
     LoginComponent,
     AdminComponent,
     NavbarComponent,
-    CustomerComponent
+    CustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
