@@ -18,14 +18,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let customer of customer ; let  i=index" [class.selected]="customer === selectedCustomer" (click)="onSelect(customer)">
+      <tr *ngFor="let customer of customer" [class.selected]="customer === selectedCustomer" (click)="onSelect(customer)">
         <td>{{customer.id}}</td>
         <td>{{customer.name}}</td>
         <td id="status-{{customer.id}}">{{customer.status}}</td>
         <td> 
           <label class="switch">
             <input type="checkbox" >
-            <span class= "slider round" (click)="toggle(customer.id)" [ngClass]= "() ? 'greenClass' : 'redClass'" ></span> 
+            <span class= "slider round" (click)="toggle(customer.id)" [ngClass]= "(customer.id === 'Inactive') ? 'greenClass' : 'redClass'" ></span> 
           </label>
         </td>
       </tr>

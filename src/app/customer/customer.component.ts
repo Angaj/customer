@@ -16,22 +16,17 @@ export class CustomerComponent implements OnInit {
   public show:boolean = false;
   public buttonName:any = 'Inactive';
   statusText: string;
-  isClicked: boolean;
+  
   constructor(private customerService: CustomerService, private router : Router ) { }
 
 
   ngOnInit() {
-    this.isClicked = false;
     this.getCustomer();
+    this.postCustomer();
   }
 
   onSelect(customer: Customer) : void{
     this.selectedCustomer= customer;
-    this.customer.forEach(custId => {
-      if(custId.id === customer.id) {
-        this.isClicked = true;
-      }
-    })
     
   }  
 
@@ -39,12 +34,17 @@ export class CustomerComponent implements OnInit {
    this.customer = this.customerService.getCustomer()
   }
 
+  postCustomer(): void{
+    this.customer = this.customerService.postCustomer()
+  }
+  
+  
   toggle(id) {
     let status = document.getElementById('status-'+id);
     this.statusText = status.innerText;
     // CHANGE THE NAME OF THE BUTTON.
     status.innerText = (this.statusText == 'Inactive') ? 'Active' : 'Inactive';
-    //console.log(status.innerText)
+    console.log(status.innerText)
 
 
     /*

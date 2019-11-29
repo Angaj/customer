@@ -38,7 +38,7 @@
 }
 
 input:checked + .slider {
-  /* background-color: green */
+   background-color: green 
 }
 
 input:focus + .slider {
