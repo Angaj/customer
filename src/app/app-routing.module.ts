@@ -14,8 +14,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: 'navbar',component: NavbarComponent},
-  {path:'customer', component: CustomerComponent},
-  {path:'customer-detail', component: CustomerDetailComponent}
+  {path:'customer', component: CustomerComponent,
+    children: [ {path:'customerdetail', component: CustomerDetailComponent} ] 
+  },
+ // {path:'customer-detail', component: CustomerDetailComponent}
 ];
 
 @NgModule({

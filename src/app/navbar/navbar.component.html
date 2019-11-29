@@ -1,9 +1,10 @@
 <div class="topnav">
- <nav> <a class="active" href="#home">Home</a>
-  <a href="#news">Customer</a>
-  <a href="#contact">Plans</a>
+ <nav> 
+ <a class="active" routerLink="/">Home</a>
+  <a routerLink="/customer">Customer</a>
+  <a routerLink="/">Plans</a>
   <div class="topnav-right" >
-    <a id="logout" *ngIf="!logout">Logout</a>
+    <a id="logout" *ngIf="!authService">Logout</a>
   </div>
   </nav>
 </div>  

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Customer} from '../customer';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Customer} from '../customer';
 export class CustomerDetailComponent implements OnInit {
 
   @Input() customer: Customer;
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
